@@ -62,9 +62,7 @@ public class HiveJdbcCli {
     }  
     public static void insertOrc(Statement stmt,String batchName,String application,String dt)  
             throws SQLException {  
-        /*sql = "load data local inpath '" + filepath + "' into table "  
-                + tableName;  */
-        sql = "INSERT into TABLE t1 partition (dt='" + dt + "' , application='" + application + "') "
+        sql = "INSERT into TABLE glogs partition (dt='" + dt + "' , application='" + application + "') "
         		+ "select  ts,sequence,filename,ip,message from logs where dt='" + dt + "'  and application='" + application + "'";
         logger.info("Running:" + sql);
         stmt.execute(sql);  

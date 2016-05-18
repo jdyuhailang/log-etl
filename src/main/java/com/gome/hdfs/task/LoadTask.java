@@ -30,11 +30,7 @@ public class LoadTask extends TimerTask {
 	public void run() {
 		logger.info("LoadTask run...");
 		logger.info("begin export data");
-		/*String uri = "hdfs://10.58.50.66:9000/";  
-        Configuration config = new Configuration();
-        FileSystem fs;*/
 		try {
-			//fs = FileSystem.get(URI.create(uri), config);
 			String dt = DateFormat.format(-1);
 	        FileStatus[] fliestatus = fs.listStatus(new Path("hdfs://10.58.50.66:9000/flume/logs/events/" + dt + "/"));
 	        
