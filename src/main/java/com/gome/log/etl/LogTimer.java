@@ -24,7 +24,7 @@ public class LogTimer {
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         //定制每天的18:00:00执行，
-        calendar.set(year, month, day+1, 00, 40, 00);
+        calendar.set(year, month, day+1, 00, 50, 00);
         Date date = calendar.getTime();
         String uri = "hdfs://10.58.50.66:9000/";  
         Configuration config = new Configuration();
